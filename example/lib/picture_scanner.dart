@@ -6,7 +6,6 @@
 
 import 'dart:async';
 import 'dart:io';
-import 'dart:ui';
 
 import 'package:google_ml_vision/google_ml_vision.dart';
 import 'package:flutter/material.dart';

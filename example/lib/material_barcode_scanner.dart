@@ -54,7 +54,6 @@ class _MaterialBarcodeScannerState extends State<MaterialBarcodeScanner>
   void initState() {
     super.initState();
 
-    SystemChrome.setEnabledSystemUIOverlays(<SystemUiOverlay>[]);
     SystemChrome.setPreferredOrientations(
       <DeviceOrientation>[DeviceOrientation.portraitUp],
     );
@@ -274,10 +273,6 @@ class _MaterialBarcodeScannerState extends State<MaterialBarcodeScanner>
     _barcodeDetector.close();
 
     SystemChrome.setPreferredOrientations(<DeviceOrientation>[]);
-    SystemChrome.setEnabledSystemUIOverlays(<SystemUiOverlay>[
-      SystemUiOverlay.top,
-      SystemUiOverlay.bottom,
-    ]);
 
     super.dispose();
   }
@@ -348,8 +343,6 @@ class _MaterialBarcodeScannerState extends State<MaterialBarcodeScanner>
                   padding: const EdgeInsets.all(16),
                   child: Text(
                     '1 result found',
-                    // TODO(bmparr): Switch body2 -> bodyText1 once https://github.com/flutter/flutter/pull/48547 makes it to stable.
-                    // ignore: deprecated_member_use
                     style: Theme.of(context).textTheme.bodyText1,
                   ),
                 ),
@@ -378,15 +371,12 @@ class _MaterialBarcodeScannerState extends State<MaterialBarcodeScanner>
                                   margin: const EdgeInsets.only(bottom: 4),
                                   child: Text(
                                     'SPAN Reader',
-                                    // TODO(bmparr): Switch body2 -> bodyText1 once https://github.com/flutter/flutter/pull/48547 makes it to stable.
-                                    // ignore: deprecated_member_use
-                                    style: Theme.of(context).textTheme.bodyText1,
+                                    style:
+                                        Theme.of(context).textTheme.bodyText1,
                                   ),
                                 ),
                                 Text(
                                   'Vol. 2',
-                                  // TODO(bmparr): Switch body2 -> bodyText1 once https://github.com/flutter/flutter/pull/48547 makes it to stable.
-                                  // ignore: deprecated_member_use
                                   style: Theme.of(context).textTheme.bodyText1,
                                 ),
                                 Expanded(

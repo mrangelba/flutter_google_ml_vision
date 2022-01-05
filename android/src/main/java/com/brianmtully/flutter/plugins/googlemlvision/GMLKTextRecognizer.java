@@ -13,6 +13,8 @@ import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.text.Text;
 import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.TextRecognizer;
+import com.google.mlkit.vision.text.latin.TextRecognizerOptions;
+
 import io.flutter.plugin.common.MethodChannel;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,7 +27,7 @@ class GMLKTextRecognizer implements Detector {
   private final TextRecognizer recognizer;
 
   GMLKTextRecognizer(Map<String, Object> options) {
-      recognizer = TextRecognition.getClient();
+      recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS);
   }
 
   @Override
